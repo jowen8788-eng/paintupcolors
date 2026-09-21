@@ -2,7 +2,7 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --navy:#0d1b2a;--steel:#1b3a5c;--gold:#c8902a;--glt:#e8b44a;
-  --white:#fff;--gray:#6b7280;--light:#f9f7f4;
+  --white:#1E90FF;--gray:#6b7280;--light:#f9f7f4;
   --danger:#dc2626;--success:#16a34a;
   --r:12px;--sh:0 8px 32px rgba(13,27,42,.15)
 }
@@ -12,7 +12,7 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif}
 a{text-decoration:none;color:inherit}
 
 .nlogo-img {
-  height: 54px;        /* Adjust height to your liking */
+  height: 104px;        /* Adjust height to your liking */
   width: auto;         /* Keeps the original proportions */
   object-fit: contain;
   background: #f1f3f5;
@@ -182,7 +182,7 @@ section{padding:6rem 2rem}
   cursor:pointer;transition:background .25s,width .25s}
 .cdot.on{background:var(--gold);width:24px;border-radius:4px}
 
-/* REVIEWS */
+/* REVIEWS / color de nuestros servicios*/
 #reviews{background:#fff}
 .rgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-top:3rem}
 .rcard{background:var(--light);border-radius:var(--r);padding:1.8rem;
