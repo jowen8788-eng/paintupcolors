@@ -6,6 +6,8 @@ var ro=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isInterse
 document.querySelectorAll('.reveal').forEach(function(el){ro.observe(el)});
 
 /* Carousel */
+/* El carrusel esta comentado en el HTML: solo se ejecuta si existe */
+if(document.getElementById("ctr")){
 var cur=0,ctr=document.getElementById('ctr'),tot=ctr.querySelectorAll('.cslide').length,cdo=document.getElementById('cdots'),asi;
 (function(){for(var i=0;i<tot;i++){var d=document.createElement('div');d.className='cdot'+(i===0?' on':'');(function(n){d.onclick=function(){ra();go(n)}})(i);cdo.appendChild(d)}})();
 function go(n){cur=(n+tot)%tot;ctr.style.transform='translateX(-'+(cur*100)+'%)';cdo.querySelectorAll('.cdot').forEach(function(d,i){d.classList.toggle('on',i===cur)})}
@@ -17,6 +19,7 @@ ra();
 var tx=0;
 ctr.parentElement.addEventListener('touchstart',function(e){tx=e.touches[0].clientX},{passive:true});
 ctr.parentElement.addEventListener('touchend',function(e){var dx=e.changedTouches[0].clientX-tx;if(Math.abs(dx)>50)mv(dx<0?1:-1)});
+}
 
 /* Toast */
 function toast(m,t){var el=document.getElementById('toast');el.textContent=m;el.className='ton t'+(t==='error'?'err':'ok');setTimeout(function(){el.className=''},4500)}
@@ -57,20 +60,25 @@ document.getElementById('qForm').addEventListener('submit',function(e){
     [S,function(v){return v!==''},'qSvE'],[D,function(v){return v.trim().length>=20},'qDsE']]
     .forEach(function(c){var v=c[1](c[0].value);fs(c[0],v);em(c[2],!v);if(!v)ok=false});
   if(!V.checked){em('qPvE',true);ok=false}else{em('qPvE',false)}
+  var capEl=document.querySelector('#qForm textarea[name="h-captcha-response"]'),
+    capTok=capEl?capEl.value:'';
+  if(!capTok){em('qCpE',true);ok=false}else{em('qCpE',false)}
   if(!ok){toast('Por favor corrige los campos marcados en rojo.','error');var fe=document.querySelector('#qForm .ferr');if(fe)fe.scrollIntoView({behavior:'smooth',block:'center'});return}
   var btn=document.getElementById('qSub');btn.disabled=true;btn.textContent='Enviando...';
   fetch('https://api.web3forms.com/submit',{
     method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},
-    body:JSON.stringify({access_key:'3f475c43-5373-4c9e-8852-2e48e2577eed',
+    body:JSON.stringify({access_key:'7e527b1c-2efc-408c-8b38-71750e0c01f0',
       subject:'Nueva Solicitud de Cotizacion - PaintUpColors',
       from_name:'PaintUpColors Web',
       firstName:F.value.trim(),lastName:L.value.trim(),
       phone:P.value.trim(),email:E.value.trim(),
-      service:S.value,description:D.value.trim()})
+      service:S.value,description:D.value.trim(),
+      botcheck:document.querySelector('#qForm [name="botcheck"]').checked,
+      'h-captcha-response':capTok})
   }).then(function(r){return r.json()}).then(function(r){
     if(r.success){document.getElementById('qForm').style.display='none';document.getElementById('qSuc').style.display='block';toast('Solicitud enviada con exito!','success')}
     else throw new Error(r.message)
-  }).catch(function(){toast('Error al enviar. Intenta de nuevo o llamanos.','error');btn.disabled=false;btn.textContent='Enviar Solicitud de Cotizacion'})
+  }).catch(function(){if(window.hcaptcha)hcaptcha.reset();toast('Error al enviar. Intenta de nuevo o llamanos.','error');btn.disabled=false;btn.textContent='Enviar Solicitud de Cotizacion'})
 });
 
 (function () {
@@ -109,4 +117,54 @@ document.getElementById('revForm').addEventListener('submit',function(e){
     '<div class="rl">'+san(c||'Cliente verificado')+'</div></div></div>';
   document.getElementById('rGrid').prepend(card);
   this.reset();toast('Gracias por tu comentario!','success')
+});
+
+
+
+/*galeria de proyectos*/
+
+document.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll(".project-card");
+  const modal = document.getElementById("projectModal");
+  const closeModal = document.querySelector(".close-btn");
+  const modalTitle = document.getElementById("modalTitle");
+  const modalDescription = document.getElementById("modalDescription");
+  const modalGallery = document.getElementById("modalGallery");
+
+  cards.forEach(card => {
+    card.addEventListener("click", () => {
+      const title = card.getAttribute("data-title");
+      const description = card.getAttribute("data-description");
+      
+      // Obtenemos la cadena de rutas y la convertimos en un arreglo separando por comas
+      const rawImages = card.getAttribute("data-images");
+      const images = rawImages ? rawImages.split(",").map(src => src.trim()) : [];
+
+      modalTitle.textContent = title;
+      modalDescription.textContent = description;
+
+      // Limpiamos las imágenes del proyecto anterior
+      modalGallery.innerHTML = "";
+
+      // Insertamos las nuevas fotos del proyecto seleccionado
+      images.forEach(src => {
+        const img = document.createElement("img");
+        img.src = src;
+        img.alt = title;
+        modalGallery.appendChild(img);
+      });
+
+      modal.style.display = "flex";
+    });
+  });
+
+  closeModal.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+
+  window.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.style.display = "none";
+    }
+  });
 });

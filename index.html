@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>PaintUPColorsllc</title>
+  <title>pruebasPaintUPColorsllc</title>
 
   <!-- ============================================================
     SECURITY HEADERS (via <meta> tags)
@@ -14,12 +14,12 @@
   <!-- Content Security Policy: only allow resources from your own domain + trusted CDNs -->
   <meta http-equiv="Content-Security-Policy"
         content="default-src 'self';
-                 script-src 'self' 'unsafe-inline' https://www.google.com https://www.gstatic.com;
-                 style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+                 script-src 'self' 'unsafe-inline' https://www.google.com https://www.gstatic.com https://web3forms.com https://hcaptcha.com https://*.hcaptcha.com;
+                 style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://hcaptcha.com https://*.hcaptcha.com;
                  font-src 'self' https://fonts.gstatic.com;
                  img-src 'self' data: https:;
-                 connect-src 'self' https://api.web3forms.com;
-                 frame-src https://www.google.com;
+                 connect-src 'self' https://api.web3forms.com https://hcaptcha.com https://*.hcaptcha.com;
+                 frame-src https://www.google.com https://hcaptcha.com https://*.hcaptcha.com;
                  object-src 'none';
                  base-uri 'self';
                  form-action 'self' https://api.web3forms.com;">
@@ -47,7 +47,7 @@
 <!-- NAV -->
 <nav>
   <div class="nlogo">
-    <img src="./img/logoPaint.png" alt="PaintUPColors Logo" class="nlogo-img" style="width: 65px; height: auto;"/>
+    <img src="./img/logoPaint.png" alt="PaintUPColors Logo" style="width: 67px; height: auto;"/>
     <span class="nlogo-t">PaintUP<span class="nlogo-a">Colors</span></span>
   </div>
   <ul class="nlinks">
@@ -87,10 +87,18 @@
       </div>
     </div>
     <div class="hcards">
-      <div class="hcard"><div class="hcicon">&#127968;</div><h4>Remodeling</h4><p>With premium finishes.</p></div>
-      <div class="hcard"><div class="hcicon">&#127912;</div><h4>Painting</h4><p>Interior and exterior with trending colors.</p></div>
-      <div class="hcard"><div class="hcicon">&#9889;</div><h4>Electrical</h4><p>Professional and safe facilities.</p></div>
-      <div class="hcard"><div class="hcicon">&#128295;</div><h4>Plumbing</h4><p>Repair and installation, leak-free.</p></div>
+      <div class="hcard"><div class="hcicon">
+		<img src="./img/remodelacion.png" alt="remodelacion" style="width: 60px; height: auto;"/>
+	</div><h4>Remodeling</h4><p>With premium finishes.</p></div>
+      <div class="hcard"><div class="hcicon">
+		<img src="./img/painting.png" alt="remodelacion" style="width: 60px; height: auto;"/>
+	  </div><h4>Painting</h4><p>Interior and exterior with trending colors.</p></div>
+      <div class="hcard"><div class="hcicon">
+		<img src="./img/electrical.png" alt="painting" style="width: 60px; height: auto;"/>
+	  </div><h4>Electrical</h4><p>Professional and safe facilities.</p></div>
+      <div class="hcard"><div class="hcicon">
+		<img src="./img/reparacion.png" alt="Electrical" style="width: 60px; height: auto;"/>
+	  </div><h4>Plumbing</h4><p>Repair and installation, leak-free.</p></div>
     </div>
   </div>
 </section>
@@ -102,18 +110,98 @@
     <h2 class="stitle reveal">Everything your home needs</h2>
     <p class="ssub reveal">We offer comprehensive solutions with top-quality materials and certified technicians.</p>
     <div class="sgrid">
-      <div class="scard reveal"><div class="sicon">&#127912;</div><h3>Residential Painting</h3><p>Interior and exterior painting with professional techniques. Decorative textures and custom colors.</p></div>
-      <div class="scard reveal"><div class="sicon">&#9889;</div><h3>Electrical</h3><p>Electrical installations, wiring, LED lighting, and troubleshooting with enhanced safety..</p></div>
-      <div class="scard reveal"><div class="sicon">&#127959;</div><h3>Remodeling</h3><p>Full renovation of kitchens, bathrooms and living rooms with American finishes and imported materials.</p></div>
-      <div class="scard reveal"><div class="sicon">&#128295;</div><h3>Plumbing</h3><p>Installation and repair of pipes, water heaters and bathrooms. Leak detection with modern technology.</p></div>
-      <div class="scard reveal"><div class="sicon">&#129695;</div><h3>Doors &amp; Windows</h3><p>Installation of double-panel windows and doors with high-quality thermal and acoustic sealing.</p></div>
-      <div class="scard reveal"><div class="sicon">&#127968;</div><h3>Roofing &amp; Coverings</h3><p>Roof repair and installation. Waterproofing and rainwater drainage for total protection.</p></div>
+      <div class="scard reveal"><div class="sicon">
+		<img src="./img/painting.png" alt="remodelacion" style="width: 60px; height: auto;"/>
+	  </div><h3>Residential Painting</h3><p>Interior and exterior painting with professional techniques. Decorative textures and custom colors.</p></div>
+      <div class="scard reveal"><div class="sicon">
+		<img src="./img/electrical.png" alt="painting" style="width: 60px; height: auto;"/>
+	  </div><h3>Electrical</h3><p>Electrical installations, wiring, LED lighting, and troubleshooting with enhanced safety..</p></div>
+      <div class="scard reveal"><div class="sicon">
+		<img src="./img/remodelacion.png" alt="remodelacion" style="width: 60px; height: auto;"/>
+	  </div><h3>Remodeling</h3><p>Full renovation of kitchens, bathrooms and living rooms with American finishes and imported materials.</p></div>
+      <div class="scard reveal"><div class="sicon">
+		<img src="./img/reparacion.png" alt="Electrical" style="width: 60px; height: auto;"/>
+	  </div><h3>Plumbing</h3><p>Installation and repair of pipes, water heaters and bathrooms. Leak detection with modern technology.</p></div>
+      <div class="scard reveal"><div class="sicon">
+		<img src="./img/ventanas.png" alt="Windows" style="width: 60px; height: auto;"/>
+	  </div><h3>Doors &amp; Windows</h3><p>Installation of double-panel windows and doors with high-quality thermal and acoustic sealing.</p></div>
+      <div class="scard reveal"><div class="sicon">
+		<img src="./img/techos.png" alt="techos" style="width: 60px; height: auto;"/>
+	  </div><h3>Roofing &amp; Coverings</h3><p>Roof repair and installation. Waterproofing and rainwater drainage for total protection.</p></div>
     </div>
   </div>
 </section>
 
-<!-- CAROUSEL -->
-<section id="projects">
+
+
+
+  <section class="portfolio-section">
+    <h2>Our completed projects</h2>
+    <p>Click on any project to view the full gallery and details.</p>
+
+    <!-- Contenedor principal de proyectos -->
+    <div class="portfolio-grid">
+
+      <!-- Proyecto 1 -->
+      <div class="project-card" 
+           data-title="Proyect" 
+           data-description="Changes were made to the parking area, and the main entrance of the house was remodeled."
+		   
+        data-images="./img/proyecto1/imagen1.jpeg,./img/proyecto1/imagen3.jpeg,./img/proyecto1/imagen5.jpeg,./img/proyecto1/imagen6.jpeg,./img/proyecto1/imagen7.jpeg,./img/proyecto1/imagen8.jpeg,./img/proyecto1/imagen4.jpeg">
+		   
+        <div class="card-image">
+          <img src="./img/proyecto1/imagen9.jpeg" alt="Proyecto 1">
+          <div class="overlay">
+		  
+	    <span>Ver Proyecto Completo</span>
+          </div>
+        </div>
+        <div class="card-info">
+          <h3>driveway and landing steps.</h3>
+          <!--<p>Changes were made to the parking area, and the main entrance of the house was remodeled.</p>-->
+        </div>
+      </div>
+
+      <!-- Proyecto 2 -->
+     
+	  <div class="project-card" 
+           data-title="Proyect" 
+           data-description="Outdoor garden lounge area renovation."
+		   
+        data-images="./img/proyectTwo/imagen5.jpeg,./img/proyectTwo/imagen6.jpeg,./img/proyectTwo/imagen7.jpeg,./img/proyectTwo/imagen8.jpeg,./img/proyectTwo/imagen10.jpeg">
+		   
+        <div class="card-image">
+          <img src="./img/proyectTwo/imagen7.jpeg" alt="Proyecto 2">
+          <div class="overlay">
+		  
+	    <span>Ver Proyecto Completo</span>
+          </div>
+        </div>
+        <div class="card-info">
+          <h3>Outdoor garden lounge area renovation.</h3>
+          <!--<p>Changes were made to the parking area, and the main entrance of the house was remodeled.</p>-->
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Ventana Modal (Se abre al hacer clic en un proyecto) -->
+  <div id="projectModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h2 id="modalTitle">Título del Proyecto</h2>
+      <p id="modalDescription">Descripción del trabajo realizado...</p>
+      
+      <!-- Galería interna del proyecto seleccionado -->
+      <div class="modal-gallery" id="modalGallery">
+        <!-- Aquí JavaScript insertará las fotos del proyecto -->
+      </div>
+    </div>
+  </div>
+
+<!-- CAROUSEL--> 
+<!--<section id="projects">
   <div class="cnt">
     <p class="slabel reveal">Completed Projects</p>
     <h2 class="stitle reveal">Our work speaks for itself</h2>
@@ -122,44 +210,44 @@
       <button class="cbtn prev" id="btnP" aria-label="Previous">&#8592;</button>
       <div class="couter">
         <div class="ctrack" id="ctr">
-          <!-- Slide 1 -->
+          <!-- Slide 1 
           <div class="svis sv1">
             <div class="sinner" id="si1">
               <div class="sframe" style="background-image: url('./img/proyectTwo/imagen1.jpeg')"></div>
               <div class="sframe" style="background-image: url('./img/proyectTwo/imagen3.jpeg')"></div>
               <div class="sframe" style="background-image: url('./img/proyectTwo/imagen4.jpeg')"></div>
             </div>
-            <div class="sph"><div class="sphi"></div><h3>Renovated Living Room</h3><p>Austin, TX</p></div>
+            <div class="sph"><div class="sphi"></div><h3>Renovated Living Room</h3><p></p></div>
           </div>
 
-          <!-- Slide 2 -->
+          <!-- Slide 2 
           <div class="svis sv2">
             <div class="sinner" id="si2">
               <div class="sframe" style="background-image: url('./img/proyectOne/imagen2.jpeg')"></div>
               <div class="sframe" style="background-image: url('./img/proyectOne/imagen6.jpeg')"></div>
               <div class="sframe" style="background-image: url('./img/proyectOne/imagen10.jpeg')"></div>
             </div>
-            <div class="sph"><div class="sphi"></div><h3>American Kitchen</h3><p>Houston, TX</p></div>
+            <div class="sph"><div class="sphi"></div><h3>American Kitchen</h3><p></p></div>
           </div>
 
-          <!-- Slide 3 -->
+          <!-- Slide 3 
           <div class="svis sv3">
             <div class="sinner" id="si3">
               <div class="sframe" style="background-image: url('./img/proyectOne/imagen3.jpeg')"></div>
               <div class="sframe" style="background-image: url('./img/proyectOne/imagen7.jpeg')"></div>
               <div class="sframe" style="background-image: url('./img/proyectOne/imagen11.jpeg')"></div>
             </div>
-            <div class="sph"><div class="sphi"></div><h3>Electrical Panel</h3><p>Dallas, TX</p></div>
+            <div class="sph"><div class="sphi"></div><h3>Electrical Panel</h3><p></p></div>
           </div>
 
-          <!-- Slide 4 -->
+          <!-- Slide 4 
           <div class="svis sv4">
             <div class="sinner" id="si4">
               <div class="sframe" style="background-image: url('./img/proyectOne/imagen4.jpeg')"></div>
               <div class="sframe" style="background-image: url('./img/proyectOne/imagen8.jpeg')"></div>
               <div class="sframe" style="background-image: url('./img/proyectOne/imagen12.jpeg')"></div>
             </div>
-            <!--<div class="sph"><div class="sphi"></div><h3>Master Bathroom</h3><p>San Antonio, TX</p></div>-->
+            <!--<div class="sph"><div class="sphi"></div><h3>Master Bathroom</h3><p>San Antonio, TX</p></div>
           </div>
         </div>
       </div>
@@ -168,6 +256,7 @@
     <div class="cdots" id="cdots"></div>
   </div>
 </section>
+-->
 
 <!-- REVIEWS -->
 <section id="reviews">
@@ -288,6 +377,9 @@
               <label for="qPv">I agree to the processing of my personal data and authorize being contacted for quoting purposes. *</label>
             </div>
             <span class="emsg" id="qPvE" style="margin-bottom:.8rem;">You must agree to continue.</span>
+            <!-- hCaptcha (integracion oficial de Web3Forms, sin keys propias) -->
+            <div class="h-captcha" data-captcha="true" data-lang="en" style="margin-bottom:.8rem;"></div>
+            <span class="emsg" id="qCpE" style="margin-bottom:.8rem;">Please complete the captcha.</span>
             <button type="submit" class="subbtn" id="qSub">Send Quote Request &#8594;</button>
           </form>
           <div class="fsuc" id="qSuc">
@@ -347,6 +439,7 @@
   })();
 </script>
 
+<script src="https://web3forms.com/client/script.js" async defer></script>
 <script src="./js/app.js"></script>
 </body>
 </html>
