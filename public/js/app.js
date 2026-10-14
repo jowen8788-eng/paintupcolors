@@ -67,7 +67,7 @@ document.getElementById('qForm').addEventListener('submit',function(e){
   var btn=document.getElementById('qSub');btn.disabled=true;btn.textContent='Enviando...';
   fetch('https://api.web3forms.com/submit',{
     method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},
-    body:JSON.stringify({access_key:'3f475c43-5373-4c9e-8852-2e48e2577eed',
+    body:JSON.stringify({access_key:'7e527b1c-2efc-408c-8b38-71750e0c01f0',
       subject:'Nueva Solicitud de Cotizacion - PaintUpColors',
       from_name:'PaintUpColors Web',
       firstName:F.value.trim(),lastName:L.value.trim(),
